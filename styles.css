@@ -1,0 +1,348 @@
+
+
+
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  background-color: black;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h1, .section h2 {
+  margin-bottom: 20px;
+}
+
+.photo-placeholder {
+  height: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: #666;
+  
+  background-size: cover;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent; /* Set a transparent border */
+  border-radius: 10px;
+  
+  padding: 00px;
+  animation: rainbow 5s linear infinite; 
+}
+
+form label, form input, form textarea, form button {
+  width: 80%;
+  max-width: 500px;
+  margin: 10px 0;
+}
+
+form input, form textarea {
+  padding: 10px;
+  font-size: 1em;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: aqua;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Navbar styles */
+
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navbar {
+  --navbar-height: 64px;
+  position: fixed;
+ 
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar-item {
+  margin: 0.4em;
+  width: 100%;
+}
+
+.home-link,
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+}
+
+.home-link:hover,
+.navbar-link:hover {
+  color: blue;
+}
+
+.navbar-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+}
+
+.navbar-link:hover {
+ 
+  color: aqua;
+  color: var(--navbar-text-color-focus);
+  
+}
+
+.navbar-logo {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5em;
+}
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #10b4eb;
+}
+
+.icon-bar {
+  background-color: black;
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+ 
+}
+
+#navbar-toggle:hover .icon-bar {
+  background-color:black;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:first-child,
+#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+
+#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+#navbar-menu {
+  position: fixed;
+  top: var(--navbar-height);
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+  
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  background-color: var(--navbar-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
+  margin: 1.4rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+  padding: 1em;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 700px) {
+  #navbar-toggle,
+  #navbar-toggle[aria-expanded="true"] {
+      display: none;
+  }
+
+  #navbar-menu,
+  #navbar-toggle[aria-expanded="true"] #navbar-menu {
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      display: block;
+      height: 100%;
+  }
+
+  .navbar-links,
+  #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      position: static;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+}
+
+/* Colorful section backgrounds */
+#home {
+  background-color: black; /* Light Pink */
+  color: white;
+}
+#about {
+  background-color: black; /* Light Pink */
+  color: white;
+}
+
+#services {
+  background-color: black; /* Light Pink */
+  color: white;
+}
+
+#blogs {
+  background-color: black; /* Light Pink */
+  color: white;
+}
+
+#contact {
+  background-color: black; /* Light Pink */
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+ 
+}
+
+.grid-item {
+  background-color:black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes rainbow {
+  0% {
+    border-color: #ff0000; /* Red */
+  }
+  16.666% {
+    border-color: #ff7f00; /* Orange */
+  }
+  33.333% {
+    border-color: #ffff00; /* Yellow */
+  }
+  50% {
+    border-color: #00ff00; /* Green */
+  }
+  66.666% {
+    border-color: #0000ff; /* Blue */
+  }
+  83.333% {
+    border-color: #4b0082; /* Indigo */
+  }
+  100% {
+    border-color: #9400d3; /* Violet */
+  }
+}
+
+.grid-item {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent; /* Set a transparent border */
+  animation: rainbow 5s linear infinite; /* Apply the rainbow animation */
+}
